@@ -126,17 +126,17 @@ public class AppTest
     public void printFiles(List<MyFile> myFileList, boolean supported)
     {
 
-        System.out.println("----------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
         if(supported) {
             System.out.println("FileList supported files:");
         }
         else {
             System.out.println("FileList unsupported files:");
         }
-        System.out.println("----------------------------------------------------------");
-        String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
+        String title = String.format("%-20s| %-72s| %-20s| %-20s|", "Filename", "Mimetype", "Size", "Extension" );
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
         System.out.println(title);
-        System.out.println("----------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
 
         String row;
 
@@ -155,7 +155,7 @@ public class AppTest
             }
 
         }
-        System.out.println("----------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------");
     }
 
 
