@@ -92,9 +92,9 @@ public class AppTest
     }
 
     /**
-     * Test to check for unsupported files
-     * prints the supported files in the log file
-     * prints the unsupported files in the log file
+     * Test to check for unsupported files of type xml and docs
+     * prints the supported files list on the console
+     * prints the unsupported files list  on the console
      */
     public void testShouldHaveUnsupportedFiles()
     {
@@ -115,6 +115,9 @@ public class AppTest
         printFiles(myFileList, false);
     }
 
+    /**
+     * Prints the files list in a table on the console
+     */
     public void printFiles(List<MyFile> myFileList, boolean supported)
     {
         if(supported) {
