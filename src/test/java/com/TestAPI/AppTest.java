@@ -3,11 +3,12 @@ package com.TestAPI;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.junit.Before;
 
 import java.util.List;
 
 /**
- * Unit test for .com.TestAPI
+ * JUnit test for .com.TestAPI
  */
 public class AppTest 
     extends TestCase
@@ -41,13 +42,12 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
+
 
     /**
      * Test to check if the api returns the list of files
      */
+    @org.junit.Test
     public void testListOfFiles()
     {
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources");
@@ -56,9 +56,11 @@ public class AppTest
 
     }
 
+
     /**
      * Test to check when the directory is empty
      */
+    @org.junit.Test
     public void testDirectoryWithNoFiles()
     {
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources/example");
@@ -69,6 +71,7 @@ public class AppTest
     /**
      * Test to check if the input directory does not exist
      */
+    @org.junit.Test
     public void testCheckDirectoryShouldExist()
     {
         List<MyFile> myFileList = listFiles.listFiles("src/test/noDirectory");
@@ -79,6 +82,7 @@ public class AppTest
     /**
      * Test to check if the input is a file rather than directory
      */
+    @org.junit.Test
     public void testInputFileInsteadofDirectory()
     {
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources/a1.jpg");
@@ -91,55 +95,67 @@ public class AppTest
      * prints the supported files list on the console
      * prints the unsupported files list on the console
      */
+    @org.junit.Test
     public void testShouldHaveUnsupportedFiles()
     {
 
         String unsupportedFileTypes = "xml,docx";
-        int countUnsuportedFiles = 0;
+        int countUnsupportedFiles = 0;
 
         List<MyFile> myFileList = listFiles.listUnsupportedFileTypes("src/test/resources", unsupportedFileTypes);
 
         for(MyFile myFile : myFileList)
         {
             if(myFile.isSupported() == false)
-                countUnsuportedFiles ++;
+                countUnsupportedFiles ++;
         }
 
-        assertTrue( "unsupportedFiles:" + unsupportedFileTypes, (countUnsuportedFiles > 0) );
+        assertTrue( "unsupportedFiles:" + unsupportedFileTypes, (countUnsupportedFiles > 0) );
+
+        // print the list of supported files
         printFiles(myFileList,true);
+
+        // print the list unsupported files
         printFiles(myFileList, false);
     }
+
 
     /**
      * Prints the files list in a table on the console
      */
     public void printFiles(List<MyFile> myFileList, boolean supported)
     {
+
+        System.out.println("----------------------------------------------------------");
         if(supported) {
             System.out.println("FileList supported files:");
         }
         else {
             System.out.println("FileList unsupported files:");
         }
-        String title = String.format("%20s %20s %72s %20s", "Filename", "Extension", "Mimetype", "Size");
+        System.out.println("----------------------------------------------------------");
+        String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
         System.out.println(title);
+        System.out.println("----------------------------------------------------------");
+
+        String row;
 
         for (MyFile myfile : myFileList)
         {
             if(myfile.isSupported() && (supported)) {
-                String row = String.format("%20s %20s %72s %20d", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize());
+                row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
                 System.out.println(row);
             }
             else
             {
                 if(!myfile.isSupported() && !(supported)) {
-                    String row = String.format("%20s %20s %72s %20d", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize());
+                    row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
                     System.out.println(row);
                 }
             }
 
         }
-        System.out.println("");
+        System.out.println("----------------------------------------------------------");
     }
 
 

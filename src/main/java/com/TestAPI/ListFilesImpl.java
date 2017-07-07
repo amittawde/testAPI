@@ -109,7 +109,7 @@ public class ListFilesImpl implements ListFiles {
             String type = null;
 
             logger.info("FileList in the directory: " + directoryName);
-            String title = String.format("%20s %20s %72s %20s","Filename", "Extension", "Mimetype", "Size");
+            String title = String.format("%-20s %-72s %20s %-20s ","Filename", "Mimetype", "Size", "Extension" );
             logger.info(title);
 
             for (File file : fList) {
@@ -127,7 +127,7 @@ public class ListFilesImpl implements ListFiles {
 
                     myFileList.add(new MyFile(file.getName(), type, mimeType, file.length(), true));
                     //logger.info(file.getName() + ", " +  type + ", " + mimeType + ", " + file.length());
-                    String row = String.format("%20s %20s %72s %20d", file.getName(), type, mimeType, file.length());
+                    String row = String.format("%-20s %-72s %20d %-20s", file.getName(), mimeType, file.length(), type);
                     logger.info(row);
                 }
             }
@@ -177,12 +177,12 @@ public class ListFilesImpl implements ListFiles {
         if(!supportedFileList.isEmpty())
         {
             logger.info("FileList supported files:");
-            String title = String.format("%20s %20s %72s %20s %20s", "Filename", "Extension", "Mimetype", "Size", "Supported");
+            String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
             logger.info(title);
 
             for (MyFile myfile : supportedFileList)
             {
-                String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), myfile.isSupported());
+                String row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
                 logger.info(row);
             }
             logger.info("");
@@ -199,12 +199,12 @@ public class ListFilesImpl implements ListFiles {
         if(!unsupportedFileList.isEmpty())
         {
             logger.info("FileList unsupported files:");
-            String title = String.format("%20s %20s %72s %20s %20s", "Filename", "Extension", "Mimetype", "Size", "Supported");
+            String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
             logger.info(title);
 
             for (MyFile myfile : unsupportedFileList)
             {
-                String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), myfile.isSupported());
+                String row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
                 logger.info(row);
             }
             logger.info("");
