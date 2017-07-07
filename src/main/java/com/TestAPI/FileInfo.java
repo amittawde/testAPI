@@ -13,14 +13,6 @@ public class FileInfo {
     private long size;
     private boolean supported;
 
-    /*
-     * Constructor class
-     */
-    FileInfo()
-    {
-        // To do
-
-    }
 
     /*
      * Constructor class assigning values

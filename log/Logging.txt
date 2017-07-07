@@ -1,72 +1,72 @@
-INFO07-07-2017 15:55:16 || ListFiles.listFiles() : FileList in the directory: src/test/resources
-INFO07-07-2017 15:55:16 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
-INFO07-07-2017 15:55:16 || ListFiles.listFiles() : .DS_Store            application/octet-stream                                                                 6148                     
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a1.jpg               image/jpeg                                                                            1094703 jpg                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a2.pdf               application/pdf                                                                         48924 pdf                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a3.txt               text/plain                                                                                266 txt                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a4.xml               application/xml                                                                          5938 xml                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a5.png               image/png                                                                                3683 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a6.jpg               image/jpeg                                                                            1094703 jpg                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a7.png               image/png                                                                                3683 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a8.png               image/png                                                                                1690 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a9.jpeg              image/jpeg                                                                               8380 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b1.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b2.gif               image/gif                                                                              623351 gif                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b3.png               image/png                                                                                1690 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b4.jpeg              image/jpeg                                                                               8380 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b5.xlsx              application/vnd.openxmlformats-officedocument.spreadsheetml.sheet                       66752 xlsx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b6.jpeg              image/jpeg                                                                               3643 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b7.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b8.txt               text/plain                                                                                266 txt                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b9.xml               application/xml                                                                          5938 xml                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : FileList in the directory: src/test/resources/example
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : FileList in the directory: src/test/resources
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : .DS_Store            application/octet-stream                                                                 6148                     
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a1.jpg               image/jpeg                                                                            1094703 jpg                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a2.pdf               application/pdf                                                                         48924 pdf                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a3.txt               text/plain                                                                                266 txt                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a4.xml               application/xml                                                                          5938 xml                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a5.png               image/png                                                                                3683 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a6.jpg               image/jpeg                                                                            1094703 jpg                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a7.png               image/png                                                                                3683 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a8.png               image/png                                                                                1690 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : a9.jpeg              image/jpeg                                                                               8380 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b1.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b2.gif               image/gif                                                                              623351 gif                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b3.png               image/png                                                                                1690 png                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b4.jpeg              image/jpeg                                                                               8380 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b5.xlsx              application/vnd.openxmlformats-officedocument.spreadsheetml.sheet                       66752 xlsx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b6.jpeg              image/jpeg                                                                               3643 jpeg                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b7.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b8.txt               text/plain                                                                                266 txt                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : b9.xml               application/xml                                                                          5938 xml                 
-INFO07-07-2017 15:55:17 || ListFiles.listFiles() : 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : FileList supported files:
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : Filename            | Mimetype                                                                | Size                |  Extension           |
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : .DS_Store           | application/octet-stream                                                |                 6148|                     | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a1.jpg              | image/jpeg                                                              |              1094703| jpg                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a2.pdf              | application/pdf                                                         |                48924| pdf                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a3.txt              | text/plain                                                              |                  266| txt                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a5.png              | image/png                                                               |                 3683| png                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a6.jpg              | image/jpeg                                                              |              1094703| jpg                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a7.png              | image/png                                                               |                 3683| png                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a8.png              | image/png                                                               |                 1690| png                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : a9.jpeg             | image/jpeg                                                              |                 8380| jpeg                | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b2.gif              | image/gif                                                               |               623351| gif                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b3.png              | image/png                                                               |                 1690| png                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b4.jpeg             | image/jpeg                                                              |                 8380| jpeg                | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b5.xlsx             | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet       |                66752| xlsx                | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b6.jpeg             | image/jpeg                                                              |                 3643| jpeg                | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : b8.txt              | text/plain                                                              |                  266| txt                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printSupportedFiles() : 
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : FileList unsupported files:
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : Filename            | Mimetype                                                                | Size                |  Extension           |
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : a4.xml              | application/xml                                                         |                 5938| xml                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : b1.docx             | application/vnd.openxmlformats-officedocument.wordprocessingml.document |                21669| docx                | 
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : b7.docx             | application/vnd.openxmlformats-officedocument.wordprocessingml.document |                21669| docx                | 
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : b9.xml              | application/xml                                                         |                 5938| xml                 | 
-INFO07-07-2017 15:55:17 || ListFiles.printUnsupportedFiles() : 
+INFO07-07-2017 16:20:04 || ListFiles.listFiles() : FileList in the directory: src/test/resources
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : .DS_Store            application/octet-stream                                                                 6148                     
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a1.jpg               image/jpeg                                                                            1094703 jpg                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a2.pdf               application/pdf                                                                         48924 pdf                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a3.txt               text/plain                                                                                266 txt                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a4.xml               application/xml                                                                          5938 xml                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a5.png               image/png                                                                                3683 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a6.jpg               image/jpeg                                                                            1094703 jpg                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a7.png               image/png                                                                                3683 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a8.png               image/png                                                                                1690 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a9.jpeg              image/jpeg                                                                               8380 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b1.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b2.gif               image/gif                                                                              623351 gif                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b3.png               image/png                                                                                1690 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b4.jpeg              image/jpeg                                                                               8380 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b5.xlsx              application/vnd.openxmlformats-officedocument.spreadsheetml.sheet                       66752 xlsx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b6.jpeg              image/jpeg                                                                               3643 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b7.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b8.txt               text/plain                                                                                266 txt                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b9.xml               application/xml                                                                          5938 xml                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() :  
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : FileList in the directory: src/test/resources/example
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() :  
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : FileList in the directory: src/test/resources
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : Filename             Mimetype                                                                                 Size Extension            
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : .DS_Store            application/octet-stream                                                                 6148                     
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a1.jpg               image/jpeg                                                                            1094703 jpg                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a2.pdf               application/pdf                                                                         48924 pdf                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a3.txt               text/plain                                                                                266 txt                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a4.xml               application/xml                                                                          5938 xml                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a5.png               image/png                                                                                3683 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a6.jpg               image/jpeg                                                                            1094703 jpg                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a7.png               image/png                                                                                3683 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a8.png               image/png                                                                                1690 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : a9.jpeg              image/jpeg                                                                               8380 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b1.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b2.gif               image/gif                                                                              623351 gif                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b3.png               image/png                                                                                1690 png                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b4.jpeg              image/jpeg                                                                               8380 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b5.xlsx              application/vnd.openxmlformats-officedocument.spreadsheetml.sheet                       66752 xlsx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b6.jpeg              image/jpeg                                                                               3643 jpeg                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b7.docx              application/vnd.openxmlformats-officedocument.wordprocessingml.document                 21669 docx                
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b8.txt               text/plain                                                                                266 txt                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() : b9.xml               application/xml                                                                          5938 xml                 
+INFO07-07-2017 16:20:05 || ListFiles.listFiles() :  
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : FileList supported files:
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : Filename            | Mimetype                                                                | Size                |  Extension           |
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : .DS_Store           | application/octet-stream                                                |                 6148|                     | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a1.jpg              | image/jpeg                                                              |              1094703| jpg                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a2.pdf              | application/pdf                                                         |                48924| pdf                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a3.txt              | text/plain                                                              |                  266| txt                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a5.png              | image/png                                                               |                 3683| png                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a6.jpg              | image/jpeg                                                              |              1094703| jpg                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a7.png              | image/png                                                               |                 3683| png                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a8.png              | image/png                                                               |                 1690| png                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : a9.jpeg             | image/jpeg                                                              |                 8380| jpeg                | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b2.gif              | image/gif                                                               |               623351| gif                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b3.png              | image/png                                                               |                 1690| png                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b4.jpeg             | image/jpeg                                                              |                 8380| jpeg                | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b5.xlsx             | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet       |                66752| xlsx                | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b6.jpeg             | image/jpeg                                                              |                 3643| jpeg                | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : b8.txt              | text/plain                                                              |                  266| txt                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logSupportedFiles() : 
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : FileList unsupported files:
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : Filename            | Mimetype                                                                | Size                |  Extension           |
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : a4.xml              | application/xml                                                         |                 5938| xml                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : b1.docx             | application/vnd.openxmlformats-officedocument.wordprocessingml.document |                21669| docx                | 
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : b7.docx             | application/vnd.openxmlformats-officedocument.wordprocessingml.document |                21669| docx                | 
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : b9.xml              | application/xml                                                         |                 5938| xml                 | 
+INFO07-07-2017 16:20:05 || ListFiles.logUnsupportedFiles() : 

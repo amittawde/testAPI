@@ -18,7 +18,7 @@ import java.util.logging.*;
 /**
  * Created by amittawade on 07/07/2017.
  * Implements the API for listing the files in a directory and also providing the ability to find unsupported files
- * Prints the list of files and list if supported/unsupported files in log file /log/Logging.txt
+ * Logs the list of files and list if supported/unsupported files in log file /log/Logging.txt
  */
 public class ListFiles implements IListFiles {
 
@@ -29,7 +29,7 @@ public class ListFiles implements IListFiles {
     private List<FileInfo> unsupportedFileList;
     private List<FileInfo> supportedFileList;
 
-    Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 
     /**
@@ -38,8 +38,19 @@ public class ListFiles implements IListFiles {
 
     ListFiles(){
 
+        /* Initialise the fileInfoLists */
+        this.supportedFileList = new ArrayList<FileInfo>();
+        this.fileInfoList = new ArrayList<FileInfo>();
+        this.unsupportedFileList = new ArrayList<FileInfo>();
+
+        setUpLogger();
+    }
+
+
+    private void setUpLogger()
+    {
         try {
-            logger.setLevel(Level.FINE);
+            LOGGER.setLevel(Level.FINE);
 
             String curDir = System.getProperty("user.dir");
 
@@ -67,29 +78,23 @@ public class ListFiles implements IListFiles {
                 }
             });
 
-            logger.addHandler(fileTxt);
-            logger.setUseParentHandlers(false);
+            LOGGER.addHandler(fileTxt);
+            LOGGER.setUseParentHandlers(false);
 
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        /* Initialise the fileInfoLists */
-        this.supportedFileList = new ArrayList<FileInfo>();
-        this.fileInfoList = new ArrayList<FileInfo>();
-        this.unsupportedFileList = new ArrayList<FileInfo>();
     }
-
 
     private Tika mimeTika = new Tika();
 
     /**
      * Traverses through the directory and returns the list of files
      * If the directory does not exist, it returns a null
-     * If the directory
+     * If the input parameter is not a directory, it returns null
      * @param directoryName to be listed
-     * @return List<FileInfo> - List of </FileInfo>
+     * @return List<FileInfo> - List of files information
      *
      */
     public List<FileInfo> listFiles(String directoryName) {
@@ -101,16 +106,18 @@ public class ListFiles implements IListFiles {
         if(Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS) && Files.isDirectory(directoryPath))
         {
 
+            String mimeType = null;
+            String type = null;
+
             directory = new File(directoryName);
 
             //get all the files from a directory
             File[] fList = directory.listFiles();
-            String mimeType = null;
-            String type = null;
 
-            logger.info("FileList in the directory: " + directoryName);
+
+            LOGGER.info("FileList in the directory: " + directoryName);
             String title = String.format("%-20s %-72s %20s %-20s ","Filename", "Mimetype", "Size", "Extension" );
-            logger.info(title);
+            LOGGER.info(title);
 
             for (File file : fList) {
 
@@ -126,12 +133,12 @@ public class ListFiles implements IListFiles {
 
 
                     fileInfoList.add(new FileInfo(file.getName(), type, mimeType, file.length(), true));
-                    //logger.info(file.getName() + ", " +  type + ", " + mimeType + ", " + file.length());
+
                     String row = String.format("%-20s %-72s %20d %-20s", file.getName(), mimeType, file.length(), type);
-                    logger.info(row);
+                    LOGGER.info(row);
                 }
             }
-            logger.info("");
+            LOGGER.info(" ");
             return fileInfoList;
         }
         else
@@ -143,7 +150,7 @@ public class ListFiles implements IListFiles {
      * List all the files under a directory and return a list of supported and unsupported files
      * @param directoryName to be listed
      * @param unsupportedFileType one or more comma separated unsupported file extensions
-     * @return List<FileInfo> - List of supported and unsupported files</FileInfo>
+     * @return List<FileInfo> - List of supported and unsupported files
      */
     public List<FileInfo> listUnsupportedFileTypes(String directoryName, String unsupportedFileType) {
 
@@ -160,8 +167,12 @@ public class ListFiles implements IListFiles {
             }
 
         }
-        printSupportedFiles();
-        printUnsupportedFiles();
+
+        // Log the supported files
+        logSupportedFiles();
+
+        // Log the unsuported files
+        logUnsupportedFiles();
 
         return fileInfoList;
 
@@ -169,45 +180,45 @@ public class ListFiles implements IListFiles {
 
 
     /**
-     * Print the list of supported files
+     * Log the list of supported files
      */
-    public void printSupportedFiles()
+    public void logSupportedFiles()
     {
 
         if(!supportedFileList.isEmpty())
         {
-            logger.info("FileList supported files:");
+            LOGGER.info("FileList supported files:");
             String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
-            logger.info(title);
+            LOGGER.info(title);
 
             for (FileInfo myfile : supportedFileList)
             {
                 String row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
-                logger.info(row);
+                LOGGER.info(row);
             }
-            logger.info("");
+            LOGGER.info("");
         }
     }
 
 
     /**
-     * Print the list of unsupported files
+     * log the list of unsupported files
      */
-    public void printUnsupportedFiles()
+    public void logUnsupportedFiles()
     {
 
         if(!unsupportedFileList.isEmpty())
         {
-            logger.info("FileList unsupported files:");
+            LOGGER.info("FileList unsupported files:");
             String title = String.format("%-20s| %-72s| %-20s|  %-20s|", "Filename", "Mimetype", "Size", "Extension" );
-            logger.info(title);
+            LOGGER.info(title);
 
             for (FileInfo myfile : unsupportedFileList)
             {
                 String row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
-                logger.info(row);
+                LOGGER.info(row);
             }
-            logger.info("");
+            LOGGER.info("");
         }
     }
 
@@ -215,7 +226,7 @@ public class ListFiles implements IListFiles {
 
     /**
      * get the file extension if any
-     * @param File whose extension to get
+     * @param file whose extension to get
      */
 
     private String getFileExtension(File file)
