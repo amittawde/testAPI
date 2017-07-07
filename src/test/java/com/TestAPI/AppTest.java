@@ -53,7 +53,7 @@ public class AppTest
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources");
 
         assertTrue( "There are files in the directory", (myFileList.size() > 0) );
-        //System.out.println("testApp ran");
+
     }
 
     /**
@@ -71,12 +71,9 @@ public class AppTest
      */
     public void testCheckDirectoryShouldExist()
     {
-
         List<MyFile> myFileList = listFiles.listFiles("src/test/noDirectory");
 
         assertTrue( "Directory does not exist", (myFileList == null) );
-        //System.out.println("testCheckDirectoryShouldExist");
-
     }
 
     /**
@@ -87,14 +84,12 @@ public class AppTest
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources/a1.jpg");
 
         assertTrue( "Its a file not directory", (myFileList == null) );
-        //System.out.println("testCheckDirectoryShouldExist");
-
     }
 
     /**
      * Test to check for unsupported files of type xml and docs
      * prints the supported files list on the console
-     * prints the unsupported files list  on the console
+     * prints the unsupported files list on the console
      */
     public void testShouldHaveUnsupportedFiles()
     {
