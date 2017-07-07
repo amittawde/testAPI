@@ -2,6 +2,8 @@ package com.TestAPI;
 
 /**
  * Created by amittawade on 06/07/2017.
+ * This class stores the meta data about the files like its name, extension type, MIME type, size
+ * and whether it is supported or unsupported type
  */
 public class MyFile {
 
@@ -11,11 +13,18 @@ public class MyFile {
     private long size;
     private boolean supported;
 
+    /*
+     * Constructor class
+     */
     MyFile ()
     {
+        // To do
 
     }
 
+    /*
+     * Constructor class assigning values
+     */
     MyFile(String name, String type, String mimeType, long size, boolean supported){
         this.name = name;
         this.type = type;

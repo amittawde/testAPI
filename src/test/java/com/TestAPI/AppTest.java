@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 import java.util.List;
 
 /**
- * Unit test for simple App.
+ * Unit test for .com.TestAPI
  */
 public class AppTest 
     extends TestCase
@@ -36,17 +36,19 @@ public class AppTest
     /**
      * @return the suite of tests being tested
      */
-    /*public static Test suite()
+    public static Test suite()
     {
         return new TestSuite( AppTest.class );
-    }*/
+    }
 
     /**
      * Rigourous Test :-)
      */
 
-
-    public void testApp1()
+    /**
+     * Test to check if the api returns the list of files
+     */
+    public void testListOfFiles()
     {
         List<MyFile> myFileList = listFiles.listFiles("src/test/resources");
 
@@ -54,17 +56,46 @@ public class AppTest
         //System.out.println("testApp ran");
     }
 
+    /**
+     * Test to check when the directory is empty
+     */
+    public void testDirectoryWithNoFiles()
+    {
+        List<MyFile> myFileList = listFiles.listFiles("src/test/resources/example");
+
+        assertTrue( "Directory is empty", (myFileList.size() == 0) );
+    }
+
+    /**
+     * Test to check if the input directory does not exist
+     */
     public void testCheckDirectoryShouldExist()
     {
 
-        List<MyFile> myFileList = listFiles.listFiles("/Users/amittawade/IdeaProjects/testFil");
-
+        List<MyFile> myFileList = listFiles.listFiles("src/test/noDirectory");
 
         assertTrue( "Directory does not exist", (myFileList == null) );
         //System.out.println("testCheckDirectoryShouldExist");
 
     }
 
+    /**
+     * Test to check if the input is a file rather than directory
+     */
+    public void testInputFileInsteadofDirectory()
+    {
+        List<MyFile> myFileList = listFiles.listFiles("src/test/resources/a1.jpg");
+
+        assertTrue( "Its a file not directory", (myFileList == null) );
+        //System.out.println("testCheckDirectoryShouldExist");
+
+    }
+
+    /**
+     * Test to check for unsupported files
+     * prints the supported files in the log file
+     * prints the unsupported files in the log file
+     */
     public void testShouldHaveUnsupportedFiles()
     {
 
@@ -80,7 +111,9 @@ public class AppTest
         }
 
         assertTrue( "unsupportedFiles:" + unsupportedFileTypes, (countUnsuportedFiles > 0) );
-        //System.out.println("testShouldHaveUnsupportedFiles " + countUnsuportedFiles);
+
     }
+
+
 
 }

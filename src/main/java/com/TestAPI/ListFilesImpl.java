@@ -18,7 +18,7 @@ import java.util.logging.*;
 /**
  * Created by amittawade on 06/07/2017.
  * Implements the API for listing the files in a directory and also providing the ability to find unsupported files
- * Prints the list of files and list if supported/unsupported files in log file
+ * Prints the list of files and list if supported/unsupported files in log file /log/Logging.txt
  */
 public class ListFilesImpl implements ListFiles {
 
@@ -85,9 +85,12 @@ public class ListFilesImpl implements ListFiles {
     private Tika mimeTika = new Tika();
 
     /**
-     * List all the files under a directory and return a list of supported and unsupported files
+     * Traverses through the directory and returns the list of files
+     * If the directory does not exist, it returns a null
+     * If the directory
      * @param directoryName to be listed
-     * @return List<MyFile> - List of files</MyFile>
+     * @return List<MyFile> - List of </MyFile>
+     *
      */
     public List<MyFile> listFiles(String directoryName) {
 
@@ -95,14 +98,14 @@ public class ListFilesImpl implements ListFiles {
 
         File directory = null;
 
-        if(Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS))
+        if(Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS) && Files.isDirectory(directoryPath))
         {
 
             directory = new File(directoryName);
 
             //get all the files from a directory
             File[] fList = directory.listFiles();
-            String mimeType3 = null;
+            String mimeType = null;
             String type = null;
 
             logger.info("FileList in the directory: " + directoryName);
@@ -115,19 +118,20 @@ public class ListFilesImpl implements ListFiles {
 
 
                     try {
-                        mimeType3 = mimeTika.detect(file);
+                        mimeType = mimeTika.detect(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     type = getFileExtension(file);
 
 
-                    myFileList.add(new MyFile(file.getName(), type, mimeType3, file.length(), true));
-                    //logger.info(file.getName() + ", " +  type + ", " + mimeType3 + ", " + file.length());
-                    String row = String.format("%20s %20s %72s %20d", file.getName(), type, mimeType3, file.length());
+                    myFileList.add(new MyFile(file.getName(), type, mimeType, file.length(), true));
+                    //logger.info(file.getName() + ", " +  type + ", " + mimeType + ", " + file.length());
+                    String row = String.format("%20s %20s %72s %20d", file.getName(), type, mimeType, file.length());
                     logger.info(row);
                 }
             }
+            logger.info("");
             return myFileList;
         }
         else
@@ -141,45 +145,72 @@ public class ListFilesImpl implements ListFiles {
      * @param unsupportedFileType one or more comma separated unsupported file extensions
      * @return List<MyFile> - List of supported and unsupported files</MyFile>
      */
-    public List<MyFile> listUnsupportedFileTypes(String directoryName, String unsupportedFileType)
-    {
+    public List<MyFile> listUnsupportedFileTypes(String directoryName, String unsupportedFileType) {
 
         myFileList = this.listFiles(directoryName);
-
-        String[] unsupTypes = unsupportedFileType.split(",");
-        logger.info("FileList supported and unsupported files in: " + directoryName);
-        String title = String.format("%20s %20s %72s %20s %20s","Filename", "Extension", "Mimetype", "Size", "Supported");
-        logger.info(title);
 
         for (MyFile myfile : myFileList)
         {
 
-            for(String unsupType : unsupTypes)
-            {
-                if(myfile.getType().equals(unsupType))
-                {
-                    myfile.setSupported(false);
-                    unsupportedFileList.add(myfile);
-                    //String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), "false");
-                    //logger.info(row);
-                    // logger.info(myfile.getName() + ", " +  myfile.getType() + ", " + myfile.getMimeType() + ", " + myfile.getSize() + ", false");
-                }
-                else {
-                    supportedFileList.add(myfile);
-                    //String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), "true");
-                    //logger.info(row);
-                    //logger.info(myfile.getName() + ", " + myfile.getType() + ", " + myfile.getMimeType() + ", " + myfile.getSize() + ", true");
-                }
-
+            if (unsupportedFileType.contains(myfile.getType())) {
+                myfile.setSupported(false);
+                unsupportedFileList.add(myfile);
+            } else {
+                supportedFileList.add(myfile);
             }
-            String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), myfile.isSupported());
-            logger.info(row);
 
         }
+        printSupportedFiles();
+        printUnsupportedFiles();
 
         return myFileList;
 
     }
+
+
+    /**
+     * Print the list of supported files
+     */
+    public void printSupportedFiles()
+    {
+
+        if(!supportedFileList.isEmpty())
+        {
+            logger.info("FileList supported files:");
+            String title = String.format("%20s %20s %72s %20s %20s", "Filename", "Extension", "Mimetype", "Size", "Supported");
+            logger.info(title);
+
+            for (MyFile myfile : supportedFileList)
+            {
+                String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), myfile.isSupported());
+                logger.info(row);
+            }
+            logger.info("");
+        }
+    }
+
+
+    /**
+     * Print the list of unsupported files
+     */
+    public void printUnsupportedFiles()
+    {
+
+        if(!unsupportedFileList.isEmpty())
+        {
+            logger.info("FileList unsupported files:");
+            String title = String.format("%20s %20s %72s %20s %20s", "Filename", "Extension", "Mimetype", "Size", "Supported");
+            logger.info(title);
+
+            for (MyFile myfile : unsupportedFileList)
+            {
+                String row = String.format("%20s %20s %72s %20d %20s", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize(), myfile.isSupported());
+                logger.info(row);
+            }
+            logger.info("");
+        }
+    }
+
 
 
     /**
@@ -194,7 +225,7 @@ public class ListFilesImpl implements ListFiles {
             return "directory";
         else if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
             return fileName.substring(fileName.lastIndexOf(".") + 1);
-        else return "";
+        else return " ";
     }
 
 
