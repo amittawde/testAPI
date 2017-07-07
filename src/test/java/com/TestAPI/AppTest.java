@@ -111,7 +111,37 @@ public class AppTest
         }
 
         assertTrue( "unsupportedFiles:" + unsupportedFileTypes, (countUnsuportedFiles > 0) );
+        printFiles(myFileList,true);
+        printFiles(myFileList, false);
+    }
 
+    public void printFiles(List<MyFile> myFileList, boolean supported)
+    {
+        if(supported) {
+            System.out.println("FileList supported files:");
+        }
+        else {
+            System.out.println("FileList unsupported files:");
+        }
+        String title = String.format("%20s %20s %72s %20s", "Filename", "Extension", "Mimetype", "Size");
+        System.out.println(title);
+
+        for (MyFile myfile : myFileList)
+        {
+            if(myfile.isSupported() && (supported)) {
+                String row = String.format("%20s %20s %72s %20d", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize());
+                System.out.println(row);
+            }
+            else
+            {
+                if(!myfile.isSupported() && !(supported)) {
+                    String row = String.format("%20s %20s %72s %20d", myfile.getName(), myfile.getType(), myfile.getMimeType(), myfile.getSize());
+                    System.out.println(row);
+                }
+            }
+
+        }
+        System.out.println("");
     }
 
 
