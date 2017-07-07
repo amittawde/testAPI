@@ -1,7 +1,7 @@
 package com.TestAPI;
 
 /**
- * Created by amittawade on 06/07/2017.
+ * Created by amittawade on 07/07/2017.
  * This class stores the meta data about the files like its name, extension type, MIME type, size
  * and whether it is supported or unsupported type
  */
