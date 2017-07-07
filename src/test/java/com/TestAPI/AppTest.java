@@ -3,8 +3,8 @@ package com.TestAPI;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.junit.Before;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,12 +14,12 @@ public class AppTest
     extends TestCase
 {
 
-
-    private ListFiles listFiles;
+    private IListFiles listFiles;
 
     @Override
     protected void setUp() throws Exception{
-        listFiles = new ListFilesImpl();
+
+        listFiles = new ListFiles();
     }
 
 
@@ -50,9 +50,9 @@ public class AppTest
     @org.junit.Test
     public void testListOfFiles()
     {
-        List<MyFile> myFileList = listFiles.listFiles("src/test/resources");
+        List<FileInfo> fileInfoList = listFiles.listFiles("src/test/resources");
 
-        assertTrue( "There are files in the directory", (myFileList.size() > 0) );
+        assertTrue( "There are files in the directory", (fileInfoList.size() > 0) );
 
     }
 
@@ -63,9 +63,9 @@ public class AppTest
     @org.junit.Test
     public void testDirectoryWithNoFiles()
     {
-        List<MyFile> myFileList = listFiles.listFiles("src/test/resources/example");
+        List<FileInfo> fileInfoList = listFiles.listFiles("src/test/resources/example");
 
-        assertTrue( "Directory is empty", (myFileList.size() == 0) );
+        assertTrue( "Directory is empty", (fileInfoList.size() == 0) );
     }
 
     /**
@@ -74,9 +74,9 @@ public class AppTest
     @org.junit.Test
     public void testCheckDirectoryShouldExist()
     {
-        List<MyFile> myFileList = listFiles.listFiles("src/test/noDirectory");
+        List<FileInfo> fileInfoList = listFiles.listFiles("src/test/noDirectory");
 
-        assertTrue( "Directory does not exist", (myFileList == null) );
+        assertTrue( "Directory does not exist", (fileInfoList == null) );
     }
 
     /**
@@ -85,9 +85,9 @@ public class AppTest
     @org.junit.Test
     public void testInputFileInsteadofDirectory()
     {
-        List<MyFile> myFileList = listFiles.listFiles("src/test/resources/a1.jpg");
+        List<FileInfo> fileInfoList = listFiles.listFiles("src/test/resources/a1.jpg");
 
-        assertTrue( "Its a file not directory", (myFileList == null) );
+        assertTrue( "Its a file not directory", (fileInfoList == null) );
     }
 
     /**
@@ -102,31 +102,31 @@ public class AppTest
         String unsupportedFileTypes = "xml,docx";
         int countUnsupportedFiles = 0;
 
-        List<MyFile> myFileList = listFiles.listUnsupportedFileTypes("src/test/resources", unsupportedFileTypes);
+        List<FileInfo> fileInfoList = listFiles.listUnsupportedFileTypes("src/test/resources", unsupportedFileTypes);
 
-        for(MyFile myFile : myFileList)
+        for(FileInfo fileInfo : fileInfoList)
         {
-            if(myFile.isSupported() == false)
+            if(fileInfo.isSupported() == false)
                 countUnsupportedFiles ++;
         }
 
         assertTrue( "unsupportedFiles:" + unsupportedFileTypes, (countUnsupportedFiles > 0) );
 
         // print the list of supported files
-        printFiles(myFileList,true);
+        printFiles(fileInfoList,true);
 
         // print the list unsupported files
-        printFiles(myFileList, false);
+        printFiles(fileInfoList, false);
     }
 
 
     /**
      * Prints the files list in a table on the console
      */
-    public void printFiles(List<MyFile> myFileList, boolean supported)
+    public void printFiles(List<FileInfo> fileInfoList, boolean supported)
     {
 
-        System.out.println("----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------");
         if(supported) {
             System.out.println("FileList supported files:");
         }
@@ -134,13 +134,13 @@ public class AppTest
             System.out.println("FileList unsupported files:");
         }
         String title = String.format("%-20s| %-72s| %-20s| %-20s|", "Filename", "Mimetype", "Size", "Extension" );
-        System.out.println("----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println(title);
-        System.out.println("----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------");
 
         String row;
 
-        for (MyFile myfile : myFileList)
+        for (FileInfo myfile : fileInfoList)
         {
             if(myfile.isSupported() && (supported)) {
                 row = String.format("%-20s| %-72s| %20d| %-20s| ", myfile.getName(), myfile.getMimeType(), myfile.getSize(), myfile.getType());
@@ -155,7 +155,7 @@ public class AppTest
             }
 
         }
-        System.out.println("----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------");
     }
 
 
